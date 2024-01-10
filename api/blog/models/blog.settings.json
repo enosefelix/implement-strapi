@@ -19,7 +19,8 @@
       "type": "string"
     },
     "body": {
-      "type": "string"
+      "type": "text",
+      "required": true
     },
     "image": {
       "type": "string"
