@@ -23,10 +23,10 @@ async function getToken(ctx) {
     }
 }
 
-async function getProfile(ctx) {
-    console.log("🚀 ~ getProfile ~ ctx:", ctx)
-    const accessToken = ctx.request.headers.authorization.split(' ')[1]; // Extract the token from the Authorization header
-    return await strapi.services['spotify'].getProfile(accessToken);
+async function getGenres(ctx) {
+    const {email}  = ctx?.request?.auth;
+    console.log("🚀 ~ getGenres ~ ctx?.request?.auth:", ctx?.request?.auth)
+    return await strapi.services['spotify'].getGenres(email);
 }
 
-module.exports = {getToken, getProfile};
+module.exports = {getToken, getGenres};

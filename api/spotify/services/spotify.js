@@ -29,20 +29,23 @@ async function getAuthToken(email) {
     return {access_token: token};
 }
 
-async function getProfile(accessToken) {
-    console.log('Access Token:', accessToken); // Add this line
+async function getGenres(email) {
+    console.log('Access Token:', email);
 
-    const config = {
-        headers: { Authorization: `Bearer ${accessToken}` }
-    };
+    const {apiKey} = await strapi.query('user').findOne({email});
+    console.log("🚀 ~ getProfile ~ apiKey:", apiKey)
 
     try {
-        const response = await axios.get('https://api.spotify.com/v1/me', config);
+        const response = await axios.get('https://api.spotify.com/v1/browse/categories', {
+            headers: {
+                Authorization: 'Bearer ' + apiKey
+            }
+        });
         return response.data;
     } catch (error) {
-        console.error(error);
+        console.error(error.message);
         return 'oops';
     }
 }
 
-module.exports = { getAuthToken, getProfile };
+module.exports = { getAuthToken, getGenres };

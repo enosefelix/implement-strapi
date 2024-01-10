@@ -13,5 +13,5 @@
 const initBlogs = require('../../seeds/blogs');
 
 module.exports = async () => {
-    await initBlogs()
+    // await initBlogs()
 };

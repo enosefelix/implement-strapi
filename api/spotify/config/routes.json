@@ -50,10 +50,10 @@
     },
     {
       "method": "GET",
-      "path": "/spotify/profile",
-      "handler": "spotify.getProfile",
+      "path": "/spotify/genres",
+      "handler": "spotify.getGenres",
       "config": {
-        "policies": []
+        "policies": ["global::auth"]
       }
     }
   ]
