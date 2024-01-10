@@ -55,6 +55,14 @@
       "config": {
         "policies": ["global::auth"]
       }
+    },
+    {
+      "method": "GET",
+      "path": "/spotify/:genreId/playlists",
+      "handler": "spotify.getPlaylistByGenres",
+      "config": {
+        "policies": ["global::auth"]
+      }
     }
   ]
 }

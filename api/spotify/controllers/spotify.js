@@ -25,8 +25,22 @@ async function getToken(ctx) {
 
 async function getGenres(ctx) {
     const {email}  = ctx?.request?.auth;
-    console.log("🚀 ~ getGenres ~ ctx?.request?.auth:", ctx?.request?.auth)
     return await strapi.services['spotify'].getGenres(email);
 }
 
-module.exports = {getToken, getGenres};
+async function getPlaylistByGenres(ctx) {
+    const {email}  = ctx?.request?.auth;
+    const {genreId} = ctx.params;
+    const {limit} = ctx.query;
+    return await strapi.services['spotify'].getPlaylistByGenres(email, genreId, limit);
+}
+
+// async function getTracks(ctx) {
+//     const {email}  = ctx?.request?.auth;
+//     const {trackEndpoint} = ctx.query;
+//     return await strapi.services['spotify'].getTracks(email, trackEndpoint);
+// }
+
+module.exports = {getToken, getGenres, getPlaylistByGenres, 
+    // getTracks
+};
