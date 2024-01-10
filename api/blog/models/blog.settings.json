@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "name": "blog"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "briefDescription": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "readTime": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "approved",
+        "pending",
+        "rejected"
+      ],
+      "defaultsTo": "pending"
+    },
+    "author": {
+      "model": "user"
+    }
+  }
+}

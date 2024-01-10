@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "spotifies",
+  "info": {
+    "name": "Spotify"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

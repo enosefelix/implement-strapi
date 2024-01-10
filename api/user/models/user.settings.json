@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users",
+  "info": {
+    "name": "user",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "maxLength": 25
+    },
+    "lastName": {
+      "type": "string",
+      "maxLength": 25
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "password": {
+      "type": "password",
+      "required": true
+    },
+    "gender": {
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "type": "date"
+    },
+      "apiKey": {
+        "type": "string"
+      },
+    "blogs": {
+      "collection": "blog",
+      "via": "author"
+    }
+  }
+}

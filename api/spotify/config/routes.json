@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/spotifies/count",
+      "handler": "spotify.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/spotifies/:id",
+      "handler": "spotify.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/spotifies",
+      "handler": "spotify.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/spotifies/:id",
+      "handler": "spotify.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/spotifies/:id",
+      "handler": "spotify.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/spotify/token",
+      "handler": "spotify.getToken",
+      "config": {
+        "policies": ["global::auth"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/spotify/profile",
+      "handler": "spotify.getProfile",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
