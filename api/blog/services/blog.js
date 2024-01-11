@@ -12,7 +12,6 @@ async function findBlogs() {
 }
 
 async function findBlog(id) {
-    console.log("🚀 ~ findBlog ~ id:", id)
     return await strapi.query('blog').findOne({id});
 }
 
